@@ -9,9 +9,7 @@ const ProductCard = ({ ...product }) => {
       <p className="text-xs text-red-700">{product.description}</p>
       <p className="text-sm font-semibold">${product.price}</p>
 
-      <Button onClick={product.onAddCart} variant="secondary">
-        Ajouter au panier
-      </Button>
+      <Button onClick={product.onAddCart}>Ajouter au panier</Button>
     </div>
   );
 };

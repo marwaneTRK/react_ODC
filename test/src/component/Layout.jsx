@@ -31,8 +31,31 @@ const Layout = ({ children }) => {
         </div>
       </nav>
       <main>{children}</main>
-      <footer>
-        <div></div>
+      <footer className="bg-gray-800">
+        <div className="container mx-auto px-8">
+          <div className="grid grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-lg text-white">Logo</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse,
+                nihil. Cum, possimus vero eos porro aspernatur nam assumenda
+                impedit? Asperiores?
+              </p>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg text-white">Careers</h3>
+            <ul className="flex flex-col gap-8">
+              <li>Join us</li> <li>Our culture</li> <li>Help center</li>
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-lg text-white">Products</h3>
+            <ul className="flex flex-col gap-8">
+              <li>Pricing</li> <li>Features</li> <li>Support</li>
+            </ul>
+          </div>
+        </div>
       </footer>
     </div>
   );
