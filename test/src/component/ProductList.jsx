@@ -1,8 +1,6 @@
-import { useState } from "react";
 import ProductCard from "./ProductCard";
 
-const ProductList = () => {
-  const [search, setSearch] = useState("");
+const ProductList = ({ query }) => {
   const product = [
     {
       title: "title1",
@@ -30,15 +28,10 @@ const ProductList = () => {
     },
   ];
   const filterProducts = product.filter((product) =>
-    product.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+    product.title.toLocaleLowerCase().includes(query)
   );
   return (
     <>
-      <input
-        type="text"
-        value={search}
-        onChange={(e) => setSearch(e.target.value)}
-      />
       <div className="grid md:grid-cols-3 gap-2 p-12 ">
         {filterProducts.map((product) => (
           <ProductCard {...product} />

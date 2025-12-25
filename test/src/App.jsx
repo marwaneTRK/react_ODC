@@ -1,8 +1,11 @@
+import { useState } from "react";
 import HomePage from "./component/HomePage";
 function App() {
+  const [query, setQuery] = useState("");
+
   return (
     <div className="h-screen w-screen flex flex-col gap-6 p-6">
-      <HomePage />
+      <HomePage query={query} setQuery={setQuery} />
     </div>
   );
 }

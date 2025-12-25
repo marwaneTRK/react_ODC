@@ -1,11 +1,13 @@
 import Layout from "./Layout";
 import ProductList from "./ProductList";
+import SearchBar from "./SearchBar";
 
-const HomePage = () => {
+const HomePage = ({ query, setQuery }) => {
   return (
     <>
       <Layout>
-        <ProductList />
+        <SearchBar query={query} setQuqery={setQuery} />
+        <ProductList query={query} setQuqery={setQuery} />
       </Layout>
     </>
   );
