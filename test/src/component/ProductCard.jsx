@@ -3,7 +3,7 @@ import Button from "./Button";
 const ProductCard = ({ ...product }) => {
   return (
     <div
-      className={`bg-gray-100 shadow-md py-8 p-4 rounded w-1/4 text-center `}
+      className={`bg-gray-300 shadow-md py-8 p-4 rounded w-1/3 text-center  `}
     >
       <h1 className="text-lg font-bold text-blue-800">{product.title}</h1>
       <p className="text-xs text-red-700">{product.description}</p>

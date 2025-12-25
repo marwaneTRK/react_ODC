@@ -1,10 +1,8 @@
-const Button = ({ children, onClick, variant = "primary" }) => {
+const Button = ({ children, onClick, variant = "bg-primary-800" }) => {
   return (
     <button
       onClick={onClick}
-      className={`w-64 px-4 py-2 ${
-        variant == "primary" ? "bg-blue-600" : "bg-red-600"
-      } text-white`}
+      className={`w-36 px-4 py-2 ${variant} text-white`}
     >
       {children}
     </button>

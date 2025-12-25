@@ -3,10 +3,8 @@ import ProductList from "./component/ProductList";
 function App() {
   return (
     <div className="h-screen w-screen flex flex-col gap-6 p-6">
+      <Layout />
       <ProductList />
-      <Layout>
-        <p>test</p>
-      </Layout>
     </div>
   );
 }
