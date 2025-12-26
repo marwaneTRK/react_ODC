@@ -1,15 +1,17 @@
-import Layout from "./Layout";
-import ProductList from "./ProductList";
-import SearchBar from "./SearchBar";
+import { useState } from "react";
+import { Layout } from "./Layout";
+import { ProductList } from "./ProductList";
+import { SerachBar } from "./SearchBar";
 
-const HomePage = ({ query, setQuery }) => {
-  return (
-    <>
-      <Layout>
-        <SearchBar query={query} setQuqery={setQuery} />
-        <ProductList query={query} setQuqery={setQuery} />
-      </Layout>
-    </>
-  );
-};
-export default HomePage;
+export function HomePage() {
+    const [query,setQuery]=useState("");
+    return (
+        < Layout>
+            <div>
+                <SerachBar query={query} onChangeQuery={setQuery} />
+                <ProductList query={query} />
+            </div>
+        </Layout>
+    );
+
+}

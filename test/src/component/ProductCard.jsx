@@ -1,17 +1,24 @@
-import Button from "./Button";
+import { useContext } from "react";
+import { Button } from "./Button";
+import { AuthContext } from "./AuthContext";
 
-const ProductCard = ({ ...product }) => {
-  return (
-    <div
-      className={`bg-gray-300 shadow-md py-8 p-4 rounded w-1/3 text-center  `}
-    >
-      <h1 className="text-lg font-bold text-blue-800">{product.title}</h1>
-      <p className="text-xs text-red-700">{product.description}</p>
-      <p className="text-sm font-semibold">${product.price}</p>
-
-      <Button onClick={product.onAddCart}>Ajouter au panier</Button>
-    </div>
-  );
-};
-
-export default ProductCard;
+export default function ProductCard({...product}) {
+    const {user} = useContext(AuthContext);
+    return (
+        <div className="bg-gray-100 shadow-ms py-8">
+            <h1 className="text-lg font-bold text-green-800">
+                {product.title}</h1>
+            <p className="text-xs text-gray-800">
+                {product.description}
+            </p>
+            <p className="text-xs text-gray-800"
+            > {product.price}</p>
+            {
+                user==null ? <p>Authentifiez vous pour acheter des prods </p> :
+                 <Button onClick={product.onAddCart} variant="danger">
+            Ajouter au panier</Button>
+            }
+          
+        </div>
+    );
+}
