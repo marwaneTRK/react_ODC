@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { Button } from "./Button";
 import { AuthContext } from "./AuthContext";
-
+import { Link, useNavigate } from "react-router-dom";
 export function Layout({ children }) {
   const { user, setUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  function handleLogin() {
+    navigate("/login");
+  }
   return (
     <>
       <nav className="bg-gray-100 shadow-md">
@@ -13,9 +17,9 @@ export function Layout({ children }) {
             <div className="flex justify-end items-center gap-8">
               <ul className="flex justify-end items-center gap-8">
                 <li>
-                  <a href="#" className="text-green-800 font-semibold">
+                  <Link to="/" className="text-green-800 font-semibold">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li>
                   <a href="#" className="text-green-800 font-semibold">
@@ -23,18 +27,13 @@ export function Layout({ children }) {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="text-green-800 font-semibold">
+                  <Link to="/about" className="text-green-800 font-semibold">
                     About
-                  </a>
+                  </Link>
                 </li>
               </ul>
               {user == null ? (
-                <Button
-                  onClick={() => {
-                    setUser({ name: "Marwane" });
-                  }}
-                  variant="bg-primary-200"
-                >
+                <Button onClick={handleLogin} variant="bg-primary-200">
                   Login
                 </Button>
               ) : (
